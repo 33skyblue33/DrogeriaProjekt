@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DrogeriaProjekt.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class CategoryController : ControllerBase
     {
         private ICategoryService Service;
@@ -17,7 +17,7 @@ namespace DrogeriaProjekt.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Category>> GetCategories()
+        public async Task<IEnumerable<Category>> GetCategoriesAsync()
         {
             return await Service.GetAllCategoriesAsync();
         }
