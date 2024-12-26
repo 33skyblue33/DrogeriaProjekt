@@ -1,0 +1,125 @@
+﻿.home
+{
+    background: linear-gradient(  pink, magenta, pink);
+    width: 100vw;
+    height: 100vh;
+}
+
+.topNav
+{
+    width: 100vw;
+    height: 14vh;
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+.logoSearchBox 
+{
+    width: 75vw;
+    height: 14vh;
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+    margin-top: 1vh;
+    /*border: 1vh solid red;*/
+}
+
+#logo
+{
+    font-family: 'Brush Script MT';
+    font-size: 3vw;
+    width: 20vw;
+    height: 10vh;
+    color: white;
+    text-align: center;
+}
+
+.searchBox {
+    width: 30vw;
+    height: 10vh;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    gap: 0.1vw;
+    justify-content: center;
+    align-content: center;
+    background-color: antiquewhite;
+    border: 0.1vh solid black;
+    font-size: 2vw;
+}
+
+.search 
+{
+    font-size: 20px;
+    margin-top: 2vh;
+    resize: none;
+    width: 29vw;
+    height: 8vh;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    
+}
+
+.search:active 
+{
+    border: none;
+    outline: none;
+}
+
+.logCart 
+{
+    width: 25vw;
+    height: 14vh;
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    color: white;
+    font-size: 3vw;
+    margin-top: 1vh;
+}
+
+.ad
+{
+    width: 100vw;
+    height: 45vh;
+    margin-left:auto;
+    margin-right:auto;
+    /*border:1vh solid red;*/
+
+}
+
+.categories
+{
+    width: 80vw;
+    height: 15vh;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    flex-direction:row;
+    gap: 1vw;
+    overflow:auto;
+ 
+}
+
+.category
+{
+    color:white;
+    font-size:3vw;
+    text-align:center;
+    font-family:Broadway;
+}
+
+.bottomNav
+{
+    color:white;
+    font-family:'Bookman Old Style';
+    font-size:2vw;
+    display:flex;
+    flex-direction:row;
+    gap:2vw;
+    width:100vw;
+    height:15vh;
+}
