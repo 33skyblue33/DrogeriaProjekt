@@ -1,7 +1,20 @@
+using DrogeriaProjekt.Services;
+using DrogeriaProjekt.Services.Models;
+using DrogeriaProjekt.Services.Models.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddDbContext<DatabaseContext>(options => options.UseInMemoryDatabase("Drogeria"));
+builder.Services.AddScoped<IDatabaseService, DatabaseService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOfferService, OfferService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -16,7 +29,6 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-
 
 app.MapControllerRoute(
     name: "default",
