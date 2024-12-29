@@ -18,22 +18,22 @@ namespace DrogeriaProjekt.Services.Models
                 {
                     Name = "Only Bio 30% Off",
                     Description = "All Only Bio hair products now 30% off!",
-                    ImagePath = "promocja_only_bio.jpg",
+                    ImagePath = "http://localhost:5204/images/offers/promocja_only_bio.jpg",
                     Discount = 0.3f
                 },
                 new Offer()
                 {
                     Name = "AA Laab 40% Off",
                     Description = "All AA Laab products now 40% off!",
-                    ImagePath = "promocja_aa_cosmetics.jpg",
+                    ImagePath = "http://localhost:5204/images/offers/promocja_aa_cosmetics.jpg",
                     Discount = 0.4f
                 },
                 new Offer()
-                {
-                    Name = "Nivea Men 20% Off",
-                    Description = "All Nivea Men products now 20% off!",
-                    ImagePath = "promocja_nivea_men.jpg",
-                    Discount = 0.2f
+                { 
+                    Name = "Maybelline 40% Off",
+                    Description = "Maybelline products now 40% off!",
+                    ImagePath = "http://localhost:5204/images/offers/promocja_maybelline.jpg",
+                    Discount = 0.4f
                 }
             };
 
