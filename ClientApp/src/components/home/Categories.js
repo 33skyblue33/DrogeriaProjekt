@@ -23,6 +23,12 @@ export function Categories()
         }
 
         fetchCategories();
+
+        return () => {
+            setCategories([]);
+            setError(null);
+            setLoading(true);
+        };
     },[]);
 
     if (loading)

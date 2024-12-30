@@ -23,6 +23,9 @@ namespace DrogeriaProjekt.Services.Models
                 new() { Name="Self-Care" }
             };
 
+            var current = DatabaseService.DatabaseContext.Categories.ToList();
+            DatabaseService.DatabaseContext.Categories.RemoveRange(current);
+            DatabaseService.DatabaseContext.SaveChanges();
             DatabaseService.DatabaseContext.Categories.AddRange(test);
             DatabaseService.DatabaseContext.SaveChanges();
         }

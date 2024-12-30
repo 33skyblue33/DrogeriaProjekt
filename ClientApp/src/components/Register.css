@@ -1,0 +1,11 @@
+﻿.register
+{
+    background: linear-gradient( pink, magenta, pink);
+    width:100vw;
+    height:100vh;
+    font-family:'Georgia Pro';
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    flex-direction:column;
+}

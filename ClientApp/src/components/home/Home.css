@@ -34,6 +34,12 @@
     text-align: center;
 }
 
+#logo:hover
+{
+    color:deeppink;
+    cursor:url('http://localhost:5204/images/Kursor.cur'), auto;
+}
+
 .searchBox {
     width: 30vw;
     height: 10vh;
@@ -79,6 +85,12 @@
     margin-top: 1vh;
 }
 
+.logCart i:hover
+{
+    color: deeppink;
+
+}
+
 .ad
 {
     width: 80vw;
@@ -114,6 +126,12 @@
     font-size:3vw;
     text-align:center;
     font-family:Broadway;
+
+}
+
+.category:hover
+{
+    color:deeppink;
 }
 
 .bottomNav
@@ -121,9 +139,14 @@
     color:white;
     font-family:'Bookman Old Style';
     font-size:2vw;
-    display:flex;
+    display:inline-flex;
     flex-direction:row;
     gap:2vw;
     width:100vw;
     height:15vh;
+    margin-left:auto;
+    margin-right:auto;
+    align-content:center;
+    justify-content:center;
+    margin-top:7vh;
 }
