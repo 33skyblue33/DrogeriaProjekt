@@ -28,7 +28,13 @@ export function Ad() {
 
         fetchOffers();
         const interval = setInterval(displayOffer, 5000);
-        return () => clearInterval(interval);
+
+        return () => {
+            clearInterval(interval);
+            setOffers([]);
+            setError(null);
+            setLoading(true);
+        };
 
     }, []);
 

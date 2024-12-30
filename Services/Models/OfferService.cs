@@ -37,6 +37,9 @@ namespace DrogeriaProjekt.Services.Models
                 }
             };
 
+            var current = DatabaseService.DatabaseContext.Offers.ToList();
+            DatabaseService.DatabaseContext.Offers.RemoveRange(current);
+            DatabaseService.DatabaseContext.SaveChanges();
             DatabaseService.DatabaseContext.AddRange(offers);
             DatabaseService.DatabaseContext.SaveChanges();
         }
