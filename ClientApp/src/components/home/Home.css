@@ -8,7 +8,7 @@
 .topNav
 {
     width: 100vw;
-    height: 14vh;
+    height: 15vh;
     display: flex;
     flex-direction: row;
 }
@@ -41,14 +41,12 @@
 }
 
 .searchBox {
-    width: 30vw;
-    height: 10vh;
+    width: 45vw;
+    height: fit-content;
     color: black;
     display: flex;
     flex-direction: row;
     gap: 0.1vw;
-    justify-content: center;
-    align-content: center;
     background-color: antiquewhite;
     border: 0.1vh solid black;
     font-size: 2vw;
@@ -56,21 +54,24 @@
 
 .search 
 {
-    font-size: 20px;
-    margin-top: 2vh;
+    font-size: 2vw;
     resize: none;
-    width: 29vw;
-    height: 8vh;
+    width: 44vw;
+    height:fit-content;
     border: none;
     background-color: transparent;
     outline: none;
-    
 }
 
 .search:active 
 {
     border: none;
     outline: none;
+}
+
+.searchIcon {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .logCart 
