@@ -1,0 +1,60 @@
+﻿.cart {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient( pink, magenta, pink);
+}
+
+.summaryCart {
+    width: 100vw;
+    height: 70vh;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    
+}
+
+.boxCart{
+    width:90%;
+    height:100%;
+    margin-right:auto;
+    display:flex;
+    flex-direction:column;
+    gap:1vh;
+    
+}
+
+
+
+.cartTitle{
+    width:5vw;
+    height:3vh;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:24px;
+
+}
+
+.cartTitle:hover{
+    color:white;
+}
+
+.list{
+    width:100%;
+    height:90%;
+    margin-right:auto;
+    
+
+}
+
+.checkout{
+    width:30%;
+    height:90%;
+    margin-left:auto;
+    font-size:24px;
+    
+}
+
+.checkout:hover{
+    color:white;
+}

@@ -1,0 +1,118 @@
+﻿.login {
+    background: linear-gradient( pink, magenta, pink);
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Georgia Pro';
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    width: 60vw;
+    height: 55vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap:1vh;
+}
+
+.header{
+    width:fit-content;
+    height:fit-content;
+    font-size:3vw;
+    color:white;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.label{
+    width:40vw;
+    height:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:2vw;
+    color:white;
+}
+
+.inputContainer {
+    width: 40vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input {
+    width: 99%;
+    background-color: antiquewhite;
+    border: 0.1vh solid black;
+    color: black;
+    font-size: 2vw;
+    height: fit-content;
+}
+
+.input:user-invalid{
+    border: 0.5vh solid red;
+}
+
+.input:user-invalid+.error::before{
+    content:"\f057";
+    font-family:'Font Awesome 5 Free';
+    font-weight:900;
+    color:red;
+}
+
+.input:valid {
+    border: 0.5vh solid green;
+}
+
+.input:valid + .error::before {
+    content: "\f058";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: green;
+}
+
+.input:focus{
+    outline:none;
+}
+
+.error{
+    font-size:2vw;
+    width:1%;
+    height:fit-content;
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
+.submit{
+    background-color:antiquewhite;
+    width:99%;
+    height:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:2vw;
+}
+
+.submit:hover{
+    background-color:hotpink;
+}
+
+.link {
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2vw;
+}
+
+.link:hover{
+    color:#770077;
+   
+}

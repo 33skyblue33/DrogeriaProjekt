@@ -6,8 +6,8 @@ export function LogCart() {
     const navigate = useNavigate();
     return (
         <div className='logCart' >
-            <i onClick={()=>navigate('/Register')}  className='fa fa-fw fa-user-circle'></i>
-        <i className='fa fa-fw fa-shopping-cart'></i>
+            <i onClick={()=>navigate('/Login')}  className='fa fa-fw fa-user-circle'></i>
+            <i className='fa fa-fw fa-shopping-cart' onClick={()=>navigate('/Cart')}></i>
         </div>
     );
 }
