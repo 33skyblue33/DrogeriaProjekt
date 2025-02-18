@@ -1,0 +1,95 @@
+﻿.panelAccount {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient( pink, magenta, pink);
+  
+}
+
+.accountContainer {
+    width: 80%;
+    height: 80%;
+    background-color: antiquewhite;
+    font-family: 'Georgia Pro';
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    border: 0.1vh solid deeppink;
+    font-size:2vw;
+    text-align:center;
+    font-weight:bolder;
+    color:deeppink;
+    gap:1vh;
+}
+
+.changeLabel {
+    width: 70%;
+    height: fit-content;
+    background-color: antiquewhite;
+    font-family: 'Georgia Pro';
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    text-align:left;
+    font-weight:initial;
+}
+
+.changeInput{
+    width:70%;
+    height:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.accountButtons{
+    width:70%;
+    height:fit-content;
+    display:flex;
+    flex-direction:row;
+    gap:1vw;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content:center;
+    margin-bottom:1vh;
+    margin-top:1vh;
+}
+
+.accountButton{
+    width:30%;
+    height:fit-content;
+    
+}
+
+.cancel {
+    background-color: hotpink;
+    color:white;
+}
+
+.confirm{
+    background-color:hotpink;
+    color: white;
+}
+
+.delete {
+    background-color:hotpink;
+    color: white;
+}
+
+.cancel:hover {
+    background-color: deeppink;
+   
+}
+
+.confirm:hover {
+    background-color:deeppink;
+
+}
+
+.delete:hover {
+    background-color:deeppink;
+    
+}
+
+
+
