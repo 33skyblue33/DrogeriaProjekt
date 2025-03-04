@@ -1,6 +1,7 @@
 ﻿using DrogeriaProjekt.Models;
 using DrogeriaProjekt.Services.Models.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace DrogeriaProjekt.Services.Models
 {
@@ -37,13 +38,28 @@ namespace DrogeriaProjekt.Services.Models
         public Task<User> GetUserByEmailAsync(string email)
         {
             var trimmedEmail = email.Trim();
-            return DatabaseService.DatabaseContext.Users.Where(u => u.Email == trimmedEmail).FirstOrDefaultAsync();
+            return DatabaseService.DatabaseContext.Users.FirstOrDefaultAsync(u => u.Email == trimmedEmail);
         }
 
         public Task<User> GetUserByPhoneNumberAsync(string phoneNumber)
         {
             var trimmedPhoneNumber = phoneNumber.Trim();
-            return DatabaseService.DatabaseContext.Users.Where(u => u.PhoneNumber == trimmedPhoneNumber).FirstOrDefaultAsync();
+            return DatabaseService.DatabaseContext.Users.FirstOrDefaultAsync(u => u.PhoneNumber == trimmedPhoneNumber);
+        }
+
+        public async Task<bool> ValidateCredentialsAsync(string credential, string password)
+        {
+            return await DatabaseService.DatabaseContext.Users.CountAsync(u => (u.Email == credential || u.PhoneNumber == credential) && u.Password == password) == 1;
+        }
+
+        public async Task<bool> ValidateUserExistenceAsync(string credential)
+        {
+            return await DatabaseService.DatabaseContext.Users.CountAsync(u => u.Email == credential || u.PhoneNumber == credential) == 1;
+        }
+
+        public Task<bool> VerifyUserAccountAsync()
+        {
+            throw new NotImplementedException();
         }
 
         public Task<bool> RemoveUserAsync(User user)
@@ -52,21 +68,6 @@ namespace DrogeriaProjekt.Services.Models
         }
 
         public Task<bool> UpdateUserAsync(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> ValidateCredentialsAsync(string credential, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> ValidateUserExistenceAsync(string credential)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> VerifyUserAccountAsync()
         {
             throw new NotImplementedException();
         }

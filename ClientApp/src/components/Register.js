@@ -1,7 +1,8 @@
-﻿import React,{ useRef } from 'react';
+﻿import React,{ useRef, useState } from 'react';
 import { TopNav } from './home/TopNav';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import axios from "axios";
 
 export function Register()
 {
@@ -10,6 +11,40 @@ export function Register()
     const passwordErrorRef = useRef(null);
     const confirmPasswordRef = useRef(null);
     const confirmPasswordErrorRef = useRef(null);
+
+    const [email, setEmail] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [password, setPassword] = useState('');
+
+    async function register(event) {
+        event.preventDefault();
+
+        if (email === "" || phoneNumber === "" || password === "") {
+            return;
+        }
+
+        try {
+            const response = await axios.post('http://localhost:5204/User/Register', {
+                email: email,
+                phoneNumber: phoneNumber,
+                password: password
+            });
+
+            var result = response.data;
+
+            if (result) {
+                alert("zarejestrowano");
+            }
+            else {
+                alert("nie udało się zarejestrować");
+            }
+        }
+        catch (error) {
+            throw error;
+        }
+    }
+
+
     function validatePassword() {
         const password = passwordRef.current;
         const uppercaseRegex = /[A-Z]/;
@@ -55,26 +90,26 @@ export function Register()
                 <h1 className="header">Create account</h1>
                 <label className="label">E-mail</label>
                 <div className="inputContainer">
-                    <input required className="input" type="email"></input>
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} required className="input" type="email"></input>
                     <span className="error" title="E-mail must be valid!"></span>
                 </div>
                 <label className="label">Phone number</label>
                 <div className="inputContainer">
-                    <input required className="input" type="tel"></input>
+                    <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required className="input" type="tel"></input>
                     <span className="error" title="Phone number must be valid!"></span>
                 </div>
                 <label className="label">Password</label>
                 <div className="inputContainer">
-                    <input required className="input" type="password" ref={passwordRef} onChange={validatePassword}></input>
+                    <input value={password} onChange={(e) => { setPassword(e.target.value); }} required className="input" type="password" ref={passwordRef} ></input>
                     <span ref={passwordErrorRef} className="error" title="Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character!"></span>
                 </div>
                 <label className="label">Confirm password</label>
                 <div className="inputContainer">
-                    <input required className="input" type="password" ref={confirmPasswordRef} onChange={validateConfirmPassword}></input>
+                    <input required className="input" type="password" ref={confirmPasswordRef} ></input>
                     <span ref={confirmPasswordErrorRef} className="error" title="Passwords must match!"></span>
                 </div>
                 <div className="inputContainer">
-                    <button className="submit">Register</button>
+                    <button onClick={(e)=>register(e)} className="submit">Register</button>
                     <span className="error"></span>
                 </div>
             </form>
