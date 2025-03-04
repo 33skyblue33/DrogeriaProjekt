@@ -13,20 +13,18 @@ export function Register()
     const confirmPasswordErrorRef = useRef(null);
 
     const [email, setEmail] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
 
     async function register(event) {
         event.preventDefault();
 
-        if (email === "" || phoneNumber === "" || password === "") {
+        if (email === "" || password === "") {
             return;
         }
 
         try {
             const response = await axios.post('http://localhost:5204/User/Register', {
                 email: email,
-                phoneNumber: phoneNumber,
                 password: password
             });
 
@@ -92,11 +90,6 @@ export function Register()
                 <div className="inputContainer">
                     <input value={email} onChange={(e) => setEmail(e.target.value)} required className="input" type="email"></input>
                     <span className="error" title="E-mail must be valid!"></span>
-                </div>
-                <label className="label">Phone number</label>
-                <div className="inputContainer">
-                    <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required className="input" type="tel"></input>
-                    <span className="error" title="Phone number must be valid!"></span>
                 </div>
                 <label className="label">Password</label>
                 <div className="inputContainer">

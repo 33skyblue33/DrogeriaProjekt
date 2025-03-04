@@ -41,20 +41,14 @@ namespace DrogeriaProjekt.Services.Models
             return DatabaseService.DatabaseContext.Users.FirstOrDefaultAsync(u => u.Email == trimmedEmail);
         }
 
-        public Task<User> GetUserByPhoneNumberAsync(string phoneNumber)
-        {
-            var trimmedPhoneNumber = phoneNumber.Trim();
-            return DatabaseService.DatabaseContext.Users.FirstOrDefaultAsync(u => u.PhoneNumber == trimmedPhoneNumber);
-        }
-
         public async Task<bool> ValidateCredentialsAsync(string credential, string password)
         {
-            return await DatabaseService.DatabaseContext.Users.CountAsync(u => (u.Email == credential || u.PhoneNumber == credential) && u.Password == password) == 1;
+            return await DatabaseService.DatabaseContext.Users.CountAsync(u => (u.Email == credential) && u.Password == password) == 1;
         }
 
         public async Task<bool> ValidateUserExistenceAsync(string credential)
         {
-            return await DatabaseService.DatabaseContext.Users.CountAsync(u => u.Email == credential || u.PhoneNumber == credential) == 1;
+            return await DatabaseService.DatabaseContext.Users.CountAsync(u => u.Email == credential) == 1;
         }
 
         public Task<bool> VerifyUserAccountAsync()
