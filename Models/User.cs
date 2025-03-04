@@ -8,8 +8,6 @@ namespace DrogeriaProjekt.Models
     {
         [Key]
         public int UserId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
@@ -19,4 +17,29 @@ namespace DrogeriaProjekt.Models
         public ShoppingCart ShoppingCart { get; set; }
         public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
+
+    public class ClientUser
+    {
+        public int UserId { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool Verified { get; set; }
+        public bool Admin { get; set; }
+
+        public ShoppingCart ShoppingCart { get; set; }
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public ClientUser(User user)
+        {
+            UserId = user.UserId; 
+            Email = user.Email;
+            PhoneNumber = user.PhoneNumber;
+            Verified = user.Verified;
+            Admin = user.Admin;
+            ShoppingCart = user.ShoppingCart;
+            Orders = user.Orders; 
+        }
+    }
+
+
+
 }
