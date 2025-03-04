@@ -7,6 +7,7 @@ import axios from 'axios';
 export function Login() {
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     async function login(event) {
         event.preventDefault();
@@ -25,6 +26,9 @@ export function Login() {
 
             if (result) {
                 alert("zalogowano");
+                sessionStorage.setItem("user", response.data);
+                sessionStorage.setItem("loggedIn", true);
+                navigate("/MyAccount");
             }
             else {
                 alert("nie ma takiego użytkownika");
@@ -40,7 +44,6 @@ export function Login() {
             <TopNav></TopNav>
             <form className="form">
                 <h1 className="header">Log in</h1>
-                <label className="label">E-mail or phone number</label>
                 <div className="inputContainer">
                     <input value={credential} onChange={(e) => setCredential(e.target.value)} required className="input" type="text"></input>
                     <span className="error" title="E-mail or phone numer is required!"></span>
