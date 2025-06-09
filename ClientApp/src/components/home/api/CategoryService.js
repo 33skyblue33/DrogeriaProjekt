@@ -2,7 +2,7 @@
 
 export async function getCategories() {
     try {
-        const response = await axios.get('http://localhost:5204/Category');
+        const response = await axios.get('http://skyblue33.runasp.net/Category');
         return response.data;
     }
     catch (error) {

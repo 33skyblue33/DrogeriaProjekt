@@ -1,9 +1,8 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { getCategories } from './api/CategoryService';
-import './Home.css'
+import './Home.css';
 
-export function Categories()
-{
+export function Categories() {
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -29,32 +28,31 @@ export function Categories()
             setError(null);
             setLoading(true);
         };
-    },[]);
+    }, []);
 
-    if (loading)
-    {
+    if (loading) {
         return (
-            <div className='categories'>
-            <div className='category'>Loading...</div>
-            </div>
+            <section className='categories'>
+                <p className='category'>Loading...</p>
+            </section>
         );
     }
 
-    if (error)
-    {
+    if (error) {
         return (
-            <div className='categories'>
-                <div className='category'>Error: {error.message}</div>
-            </div>
+            <section className='categories'>
+                <p className='category'>Error: {error.message}</p>
+            </section>
         );
     }
 
     return (
-        <div className='categories'>
-            {categories.map((category) => (
-                <div className='category' key={category.categoryId}>{category.name}</div>
-            )) }
-        </div>
-
+        <section className='categories'>
+            <ul>
+                {categories.map((category) => (
+                    <li className='category' key={category.categoryId}>{category.name}</li>
+                ))}
+            </ul>
+        </section>
     );
 }

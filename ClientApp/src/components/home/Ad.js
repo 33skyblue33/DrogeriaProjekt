@@ -40,23 +40,25 @@ export function Ad() {
 
     if (loading) {
         return (
-            <div className='ad'>
-                <div>Loading...</div>
-            </div>
+            <section className='ad'>
+                <p>Loading...</p>
+            </section>
         );
     }
 
     if (error) {
         return (
-            <div className='ad'>
-                <div>Error: {error.message}</div>
-            </div>
+            <section className='ad'>
+                <p>Error: {error.message}</p>
+            </section>
         );
     }
-    return (
-        <div className='ad'>
-            <img src={offers[currentOffer].imagePath} alt="ad"/>
-        </div>
 
+    return (
+        <section className='ad'>
+            <figure>
+                <img src={offers[currentOffer].imagePath} alt="Advertisement" />
+            </figure>
+        </section>
     );
 }

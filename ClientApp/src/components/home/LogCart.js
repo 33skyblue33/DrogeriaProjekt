@@ -15,9 +15,9 @@ export function LogCart() {
     }
 
     return (
-        <div className='logCart' >
+        <section className='logCart' >
             <i onClick={login}  className='fa fa-fw fa-user-circle'></i>
             <i className='fa fa-fw fa-shopping-cart' onClick={()=>navigate('/Cart')}></i>
-        </div>
+        </section>
     );
 }

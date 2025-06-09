@@ -44,21 +44,21 @@ export function Login() {
             <TopNav></TopNav>
             <form className="form">
                 <h1 className="header">Log in</h1>
-                <div className="inputContainer">
+                <section className="inputContainer">
                     <input value={credential} onChange={(e) => setCredential(e.target.value)} required className="input" type="text"></input>
                     <span className="error" title="E-mail or phone numer is required!"></span>
-                </div>
+                </section>
                 <label className="label">Password</label>
-                <div className="inputContainer">
+                <section className="inputContainer">
                     <input value={password} onChange={(e) => setPassword(e.target.value)} required className="input" type="password"></input>
                     <span className="error" title="Password is required!"></span>
 
-                </div>
+                </section>
 
-                <div className="inputContainer">
+                <section className="inputContainer">
                     <button className="submit" onClick={(event) => login(event) }>Login</button>
                     <span className="error"></span>
-                </div>
+                </section>
                 <a href="/Register" className="link">Don't have an account? Click here to register.</a>
             </form>
         </div>

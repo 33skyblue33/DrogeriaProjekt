@@ -7,12 +7,12 @@ import { BottomNav } from './BottomNav';
 export function Home()
 {
     return (
-        <div className="home">
+        <main className="home">
             <TopNav></TopNav>
             <Categories></Categories>
             <Ad></Ad>
             <BottomNav></BottomNav>
-        </div>
+        </main>
         
     );
 }

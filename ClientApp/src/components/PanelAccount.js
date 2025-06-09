@@ -6,23 +6,23 @@ import { TopNav } from './home/TopNav';
 export function PanelAccount() {
     return (
        
-        <div className="panelAccount">
+        <main className="panelAccount">
             <TopNav></TopNav>
             <form className="accountContainer">My Account
-                <div className="changeLabel">Phone number</div>
+                <label className="changeLabel">Phone number</label>
                 <input type="text" className="changeInput"></input>
-                <div className="changeLabel">Old password</div>
+                <label className="changeLabel">Old password</label>
                 <input type="password" className="changeInput"></input>
-                <div className="changeLabel">New password</div>
+                <label className="changeLabel">New password</label>
                 <input type="password" className="changeInput"></input>
-                <div className="changeLabel">Confirm new password</div>
+                <label className="changeLabel">Confirm new password</label>
                 <input type="password" className="changeInput"></input>
-                <div className="accountButtons">
+                <section className="accountButtons">
                     <button className="accountButton cancel">Cancel changes</button>
                     <button className="accountButton confirm">Confirm changes</button>
                     <button className="accountButton delete">Delete account</button>
-                </div>
+                </section>
             </form>
-        </div>
+        </main>
     )
 }

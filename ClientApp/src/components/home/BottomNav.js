@@ -1,12 +1,19 @@
 ﻿import React from 'react';
 import './Home.css';
 
-export function BottomNav()
-{
+export function BottomNav() {
     return (
-        <div className='bottomNav'>
-            <span>Customer Service Office<br/>+48333333333<br/>skyblue33.customerservice@gmail.com</span>
-            <span>Main Office Address<br />Elsnera 8/63<br />58-506 Jelenia Góra</span>
-        </div>
+        <footer className='bottomNav'>
+            <address>
+                <strong>Customer Service Office</strong><br />
+                +48 333 333 333<br />
+                <a href="mailto:skyblue33.customerservice@gmail.com">skyblue33.customerservice@gmail.com</a>
+            </address>
+            <address>
+                <strong>Main Office Address</strong><br />
+                Elsnera 8/63<br />
+                58-506 Jelenia Góra
+            </address>
+        </footer>
     );
 }

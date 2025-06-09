@@ -10,13 +10,13 @@ export function TopNav()
     const navigate = useNavigate();
 
     return(
-        <div className="topNav">
-            <div className="logoSearchBox">
+        <nav className="topNav">
+            <section className="logoSearchBox">
                 <div id="logo" onClick={()=>navigate('/') }>SKYBLUE</div>
                 <SearchBox></SearchBox>
-            </div>
+            </section>
             <LogCart></LogCart>
-        </div>
+        </nav>
     );
 }
 

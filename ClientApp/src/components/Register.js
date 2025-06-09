@@ -82,31 +82,31 @@ export function Register()
     }
 
     return (
-        <div className='login'>
+        <main className='login'>
             <TopNav></TopNav>
             <form className="form">
                 <h1 className="header">Create account</h1>
                 <label className="label">E-mail</label>
-                <div className="inputContainer">
+                <section className="inputContainer">
                     <input value={email} onChange={(e) => setEmail(e.target.value)} required className="input" type="email"></input>
                     <span className="error" title="E-mail must be valid!"></span>
-                </div>
+                </section>
                 <label className="label">Password</label>
-                <div className="inputContainer">
+                <section className="inputContainer">
                     <input value={password} onChange={(e) => { setPassword(e.target.value); }} required className="input" type="password" ref={passwordRef} ></input>
                     <span ref={passwordErrorRef} className="error" title="Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character!"></span>
-                </div>
+                </section>
                 <label className="label">Confirm password</label>
-                <div className="inputContainer">
+                <section className="inputContainer">
                     <input required className="input" type="password" ref={confirmPasswordRef} ></input>
                     <span ref={confirmPasswordErrorRef} className="error" title="Passwords must match!"></span>
-                </div>
-                <div className="inputContainer">
+                </section>
+                <section className="inputContainer">
                     <button onClick={(e)=>register(e)} className="submit">Register</button>
                     <span className="error"></span>
-                </div>
+                </section>
             </form>
-        </div>
+        </main>
         
     );
 }

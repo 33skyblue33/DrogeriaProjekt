@@ -6,17 +6,17 @@ import './Cart.css';
 
 export function Cart() {
     return (
-        <div className="cart">
+        <main className="cart">
             <TopNav></TopNav>
             <Categories></Categories>
-            <div className="summaryCart">
+            <section className="summaryCart">
                 <div className="boxCart">
-            <div className="cartTitle">Cart(3)</div>
-                <div className="list"></div>
+                    <section className="cartTitle">Cart(3)</section>
+                    <section className="list"></section>
                 </div>
-            <div className="checkout">Checkout</div>
-            </div>
-        </div>
+                <section className="checkout">Checkout</section>
+            </section>
+        </main>
         
     );
 }
